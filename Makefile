@@ -67,7 +67,7 @@ install:
 		@echo "Creating temp directory $(TMPDIR)"
 		@if [ ! -d $(DESTDIR)$(TMPDIR) ]; then /bin/mkdir -p $(DESTDIR)$(TMPDIR); fi
 		@echo "Setting temp directory permissions"
-		chmod 700 $(DESTDIR)$(TMPDIR)
+		chmod 1777 $(DESTDIR)$(TMPDIR)
 		@echo "Copying files"
 		@if [ ! -d $(DESTDIR)$(INSTALLDIR_BIN) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR_BIN); fi
 		@if [ ! -d $(DESTDIR)$(INSTALLDIR) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR); fi
