@@ -72,10 +72,10 @@ install:
 		@if [ ! -d $(DESTDIR)$(INSTALLDIR_BIN) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR_BIN); fi
 		@if [ ! -d $(DESTDIR)$(INSTALLDIR) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR); fi
 		@if [ ! -d $(DESTDIR)$(INSTALLDIR_SH) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR_SH); fi
-		cp ./systems/$(SYSTYPE)/logcheck.hacking $(DESTDIR)$(INSTALLDIR)
-		cp ./systems/$(SYSTYPE)/logcheck.violations $(DESTDIR)$(INSTALLDIR)
-		cp ./systems/$(SYSTYPE)/logcheck.violations.ignore $(DESTDIR)$(INSTALLDIR)
-		cp ./systems/$(SYSTYPE)/logcheck.ignore $(DESTDIR)$(INSTALLDIR)
+#		cp ./systems/$(SYSTYPE)/logcheck.hacking $(DESTDIR)$(INSTALLDIR)
+#		cp ./systems/$(SYSTYPE)/logcheck.violations $(DESTDIR)$(INSTALLDIR)
+#		cp ./systems/$(SYSTYPE)/logcheck.violations.ignore $(DESTDIR)$(INSTALLDIR)
+#		cp ./systems/$(SYSTYPE)/logcheck.ignore $(DESTDIR)$(INSTALLDIR)
 		cp ./systems/$(SYSTYPE)/logcheck.sh $(DESTDIR)$(INSTALLDIR_SH)
 		cp ./src/logtail $(DESTDIR)$(INSTALLDIR_BIN)
 		@echo "Setting permissions"
