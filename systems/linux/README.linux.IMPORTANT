@@ -1,0 +1,43 @@
+These files will work well with Linux Slackware release 3.0 and Red Hat 
+release 3.0.3 and 4.x
+
+Type "make install" as root to install them on your system. Edit the cron 
+to run them once per hour. 
+
+The default account to mail reports to is root. 
+
+There is also a quirky bug that I've only seen on Linux systems that will 
+sometimes report the following under "Unusual System Events":
+
+<username of person running logcheck> 1 <some number (size of message)>
+
+I can only speculate that sendmail is adding a newline to the end of the 
+status line to make this entry appear to be separate. Usually the message 
+will look like:
+
+Unusual System Events
+=-=-=-=-=-=-=-=-=-=-
+root 1 127
+
+Where the first part is the user of the person running logcheck, and the 
+last entry is the size of the total message in bytes. 
+
+This is fixed by putting in the entry "root 1" in the logcheck.ignore file. 
+I've already done this. If you run logcheck under another account you'll 
+have to add your own line. If anyone has a better solution let me know, 
+it appears to only be a problem on Linux boxes. 
+
+Lastly, many Linux releases do not rotate log files and save the old 
+logs. I recommend that you enable log rotating to save space.
+On Red Hat Linux Systems, the log files are trimmed down nightly with 
+the size command and the resulting file contains the same inode. 
+This causes logtail to issue a warning because the log file appears 
+to be *shorter* than the last time checked (smaller size, but the same 
+inode) and logtail thinks that the log has been tampered with. You can 
+circumvent this by making sure the logfile is moved to another name and 
+a new empty file is made in its place. Look at the logrotate(8) command 
+for more information.
+
+-- Craig
+
+

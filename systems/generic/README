@@ -1,0 +1,8 @@
+These files are more generic and will be a good base for systems not covered here.
+Edit the logcheck.sh and Makefile to pick the directory you want the binaries in
+(/usr/local/etc /usr/local/bin are the defaults). Edit your cron to run once per
+hour..
+
+-- Craig
+
+

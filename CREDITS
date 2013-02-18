@@ -1,0 +1,32 @@
+Thanks to the following people who have giving suggestions and helped in
+testing (In no particular order :) )
+
+Richard Bullington <rbulling@obscure.org> -- Suggested using a separate temp
+working directory for scratch files, gave some keywords for files,
+submitted fixes for logtail.c, tested on various versions of Linux
+(including Alpha versions), sent in a good Makefile as opposed to the
+one I made... :)
+
+Craig Nordin <cnordin@vni.net> -- Let me test at his site originally.
+
+Steve Busko <sbusko@burbclave.net> -- Let me test on his FreeBSD box and
+gave advice for easing installation.
+
+Jim Martin <martin.james@hq.navy.mil> -- For the HPUX testing/fixes.
+
+John Broome <broome.john@hq.navy.mil> -- Also for the HPUX testing/fixes.
+
+Jason R. Mastaler <jason@mastaler.com> -- Gave fixes for Solaris 2.5 and
+helped in testing the new version. 
+
+Dave Barr <barr@math.psu.edu> -- SunOS fixes and installation
+variable suggestions.
+
+Matt Mosley <mattm@sumac.digex.net> -- Sun fixes and testing of the new
+version. 
+
+Jean-Pierre Morant <jpm@marben.be> -- Irix fixes and testing..
+
+Jay Vassos-Libove <libove@compgen.com> -- Testing, fixes, and code
+submission for Digital UNIX OSF/1. 
+

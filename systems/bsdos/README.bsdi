@@ -1,0 +1,7 @@
+This directory contains the logcheck program reasonably tuned for BSDI 2.1
+servers. One minor change is necessary for BSDI 2.0.x servers.  See
+logcheck.sh for more information.
+
+-- Craig
+
+crowland@psionic.com

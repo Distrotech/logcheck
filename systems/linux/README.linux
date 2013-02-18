@@ -1,0 +1,9 @@
+These files will work well with Linux Slackware and Redhat releases
+and perhaps others (not tested). Type "make install" as root to
+install them on your system. Edit the cron to run them once per hour. 
+
+The default account to mail reports to is root. 
+
+-- Craig
+
+

@@ -1,0 +1,19 @@
+HPUX has a really really really really bad C compiler on the basic
+installations. You have to tell it to use ANSI C on the command line, as
+if HPUX is so much better than all the others that this needs to be an
+option.....
+
+The logtail.c program should be OK on these systems if you have a real
+compiler such as gcc loaded, otherwise you may have to play with it a bit
+to get it to work.  This usually just involves doing the compile with the
+-Aa flag set to indicate ANSI compliance...
+
+This has not been well tested on HPUX so I'd be interested in hearing any comments...
+
+Thanks..
+
+
+
+-- Craig
+
+

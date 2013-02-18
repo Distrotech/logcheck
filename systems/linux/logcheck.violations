@@ -1,0 +1,45 @@
+!=
+-ERR Password
+ATTACK
+BAD
+CWD etc
+DEBUG
+EXPN
+FAILURE
+ILLEGAL
+LOGIN FAILURE
+LOGIN REFUSED
+PERMITTED
+REFUSED
+RETR group
+RETR passwd
+RETR pwd.db
+ROOT LOGIN
+SITE EXEC
+VRFY
+"WIZ"
+admin 
+alias database
+debug
+denied
+deny
+deny host
+expn
+failed
+illegal
+kernel: Oversized packet received from
+nested
+permitted
+reject
+rexec
+rshd
+securityalert
+setsender
+shutdown
+smrsh
+su root
+su: 
+sucked
+unapproved
+vrfy
+attackalert

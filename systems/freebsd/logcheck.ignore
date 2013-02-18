@@ -1,0 +1,61 @@
+CRON.*CMD
+authsrv.*AUTHENTICATE
+cron.*CMD
+cron.*RELOAD
+cron.*STARTUP
+ftp-gw.*: exit host
+ftp-gw.*: permit host
+ftpd.*ANONYMOUS FTP LOGIN
+ftpd.*FTP LOGIN FROM
+ftpd.*connect from
+ftpd.*connection from
+ftpd.*retrieved
+ftpd.*stored
+http-gw.*: exit host
+http-gw.*: permit host
+identd.*Connection from
+identd.*Successful lookup
+kernel.*SoundCard
+last message repeated
+mail.local
+named.*Lame delegation
+named.*Response from
+named.*answer queries
+named.*points to a CNAME
+named.*reloading
+named.*starting
+netacl.*: exit host
+netacl.*: permit host
+popper.*Unable
+popper: -ERR POP server at
+popper: -ERR Unknown command: "uidl".
+ppp0
+qmail.*new msg
+qmail.*info msg
+qmail.*starting delivery
+qmail.*delivery
+qmail.*end msg
+rlogin-gw.*: exit host
+rlogin-gw.*: permit host
+sendmail.*User Unknown
+sendmail.*alias database.*rebuilt
+sendmail.*aliases.*longest
+sendmail.*from=
+sendmail.*lost input channel
+sendmail.*message-id=
+sendmail.*putoutmsg
+sendmail.*return to sender
+sendmail.*stat=
+sendmail.*timeout waiting
+smap.*host=
+smapd.*daemon running
+smapd.*delivered
+telnetd.*connect from
+telnetd.*ttloop:  peer died
+tn-gw.*: exit host
+tn-gw.*: permit host
+x-gw.*: exit host
+x-gw.*: permit host
+xntpd.*Previous time adjustment didn't complete
+xntpd.*offset
+xntpd.*time reset

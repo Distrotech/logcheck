@@ -1,0 +1,110 @@
+(ftp not in /etc/passwd)
+: FTP session closed
+CRON.*CMD
+CRON.*STARTUP
+QUIT
+USER anonymous
+USER ftp
+authsrv.*AUTHENTICATE
+cron.*RELOAD
+dialnet.*:*connection failed
+dialnet.*:*succeeded
+dialnet.*session disconnected
+error.*stopped too long
+fingerd.*: connect from
+ftp-gw.*: exit host
+ftp-gw.*: permit host
+ftpd.*: connect from
+ftpd.*: connection from
+ftpd.*ABOR
+ftpd.*ANONYMOUS FTP LOGIN
+ftpd.*CDUP
+ftpd.*CWD
+ftpd.*DELE
+ftpd.*FTP LOGIN FROM
+ftpd.*HELP
+ftpd.*LIST
+ftpd.*MKD
+ftpd.*NLST
+ftpd.*NOOP
+ftpd.*PASS
+ftpd.*PASV
+ftpd.*PORT
+ftpd.*PWD
+ftpd.*RETR
+ftpd.*RMD
+ftpd.*RNFR
+ftpd.*RNTO
+ftpd.*SIZE
+ftpd.*STOR
+ftpd.*SYST
+ftpd.*TYPE
+ftpd.*USER
+ftpd.*deleted
+ftpd.*retrieved
+ftpd.*stored
+http-gw.*: exit host
+http-gw.*: permit host
+identd.*: Connection from
+identd.*: Successful lookup
+last message repeated
+mail.local
+named.*Lame delegation
+named.*Malformed response
+named.*NSTATS
+named.*Response from
+named.*USAGE
+named.*XSTATS
+named.*answer queries
+named.*ns_forw
+named.*ns_resp
+named.*points to a CNAME
+named.*reloading
+named.*starting
+named.*: sysquery: findns error                                   
+named.*: Lame server on
+named.*: Err/TO getting serial
+named.*: secondary zone .* expired
+named.*: sysquery .* negative cache
+netacl.*: exit host
+netacl.*: permit host
+ntalkd.*: connect from
+popper.*: connect from
+popper.*Unable
+popper: -ERR POP server at
+popper: -ERR Unknown command: "uidl".
+portmaster.*Login succeeded for
+portmaster.*session disconnected user
+qmail.*new msg
+qmail.*info msg
+qmail.*starting delivery
+qmail.*delivery
+qmail.*end msg
+rlogin-gw.*: exit host
+rlogin-gw.*: permit host
+rlogind.*: connect from
+sendmail.*User Unknown
+sendmail.*from=
+sendmail.*lost input channel
+sendmail.*message-id=
+sendmail.*putoutmsg
+sendmail.*return to sender
+sendmail.*stat=
+sendmail.*timeout waiting
+sendmail.*: dropenvelope
+smap.*host=
+smapd.*daemon running
+smapd.*delivered
+syslogd: exiting
+syslogd: restart
+telnetd.*: connect from
+telnetd.*ttloop:  peer died
+tn-gw.*: exit host
+tn-gw.*: permit host
+x-gw.*: exit host
+x-gw.*: permit host
+xntpd.*: offset
+xntpd.*: peer
+xntpd.*: system event
+xntpd.*Previous time adjustment didn't complete
+xntpd.*time reset
