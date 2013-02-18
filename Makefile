@@ -50,7 +50,7 @@ all:
 		@echo "Any existing files will be overwritten."
 
 clean:		
-		/bin/rm ./src/logtail ./src/logtail.o
+		/bin/rm ./src/logtail ./src/logtail.o || true
 
 uninstall:	
 		/bin/rm $(INSTALLDIR_SH)/logcheck.sh
