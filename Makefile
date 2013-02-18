@@ -19,18 +19,18 @@ CFLAGS = -O
 # the new paths!!
 
 # This is where keyword files go.
-INSTALLDIR = /usr/local/etc
+INSTALLDIR = /etc/logcheck
 
 # This is where logtail will go
-INSTALLDIR_BIN = /usr/local/bin
+INSTALLDIR_BIN = /usr/bin
 
 # Some people want the logcheck.sh in /usr/local/bin. Uncomment this
 # if you want this. /usr/local/etc was kept for compatibility reasons.
-#INSTALLDIR_SH = /usr/local/bin
-INSTALLDIR_SH = /usr/local/etc
+INSTALLDIR_SH = /usr/bin
+#INSTALLDIR_SH = /etc/logcheck
 
 # The scratch directory for logcheck files.
-TMPDIR = /usr/local/etc/tmp
+TMPDIR = /tmp
 
 # Debug mode for logtail
 # CFLAGS = -g -DDEBUG
@@ -62,25 +62,29 @@ uninstall:
 
 install:	
 		@echo "Making $(SYSTYPE)"
-		$(CC) $(CFLAGS) -o ./src/logtail ./src/logtail.c
+		$(CC) $(CFLAGS) -c -o ./src/logtail.o ./src/logtail.c
+		$(CC) $(CFLAGS) -o ./src/logtail ./src/logtail.o
 		@echo "Creating temp directory $(TMPDIR)"
-		@if [ ! -d $(TMPDIR) ]; then /bin/mkdir $(TMPDIR); fi
+		@if [ ! -d $(DESTDIR)$(TMPDIR) ]; then /bin/mkdir -p $(DESTDIR)$(TMPDIR); fi
 		@echo "Setting temp directory permissions"
-		chmod 700 $(TMPDIR)
+		chmod 700 $(DESTDIR)$(TMPDIR)
 		@echo "Copying files"
-		cp ./systems/$(SYSTYPE)/logcheck.hacking $(INSTALLDIR)
-		cp ./systems/$(SYSTYPE)/logcheck.violations $(INSTALLDIR)
-		cp ./systems/$(SYSTYPE)/logcheck.violations.ignore $(INSTALLDIR)
-		cp ./systems/$(SYSTYPE)/logcheck.ignore $(INSTALLDIR)
-		cp ./systems/$(SYSTYPE)/logcheck.sh $(INSTALLDIR_SH)
-		cp ./src/logtail $(INSTALLDIR_BIN)
+		@if [ ! -d $(DESTDIR)$(INSTALLDIR_BIN) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR_BIN); fi
+		@if [ ! -d $(DESTDIR)$(INSTALLDIR) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR); fi
+		@if [ ! -d $(DESTDIR)$(INSTALLDIR_SH) ]; then /bin/mkdir -p $(DESTDIR)$(INSTALLDIR_SH); fi
+		cp ./systems/$(SYSTYPE)/logcheck.hacking $(DESTDIR)$(INSTALLDIR)
+		cp ./systems/$(SYSTYPE)/logcheck.violations $(DESTDIR)$(INSTALLDIR)
+		cp ./systems/$(SYSTYPE)/logcheck.violations.ignore $(DESTDIR)$(INSTALLDIR)
+		cp ./systems/$(SYSTYPE)/logcheck.ignore $(DESTDIR)$(INSTALLDIR)
+		cp ./systems/$(SYSTYPE)/logcheck.sh $(DESTDIR)$(INSTALLDIR_SH)
+		cp ./src/logtail $(DESTDIR)$(INSTALLDIR_BIN)
 		@echo "Setting permissions"
-		chmod 700 $(INSTALLDIR_SH)/logcheck.sh
-		chmod 700 $(INSTALLDIR_BIN)/logtail
-		chmod 600 $(INSTALLDIR)/logcheck.violations.ignore
-		chmod 600 $(INSTALLDIR)/logcheck.violations
-		chmod 600 $(INSTALLDIR)/logcheck.hacking
-		chmod 600 $(INSTALLDIR)/logcheck.ignore
+		chmod 700 $(DESTDIR)$(INSTALLDIR_SH)/logcheck.sh
+		chmod 700 $(DESTDIR)$(INSTALLDIR_BIN)/logtail
+#		chmod 600 $(DESTDIR)$(INSTALLDIR)/logcheck.violations.ignore
+#		chmod 600 $(DESTDIR)$(INSTALLDIR)/logcheck.violations
+#		chmod 600 $(DESTDIR)$(INSTALLDIR)/logcheck.hacking
+#		chmod 600 $(DESTDIR)$(INSTALLDIR)/logcheck.ignore
 		@echo "Done. Don't forget to set your crontab."		
 
 generic:		
@@ -104,3 +108,5 @@ hpux:
 digital:		
 		make install SYSTYPE=digital
 
+
+distclean: clean

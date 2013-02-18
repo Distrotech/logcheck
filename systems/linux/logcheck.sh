@@ -44,7 +44,7 @@ SYSADMIN=root
 # Full path to logtail program.
 # This program is required to run this script and comes with the package.
 
-LOGTAIL=/usr/local/bin/logtail
+LOGTAIL=/usr/bin/logtail
 
 # Full path to SECURED (non public writable) /tmp directory.
 # Prevents Race condition and potential symlink problems. I highly
@@ -52,7 +52,7 @@ LOGTAIL=/usr/local/bin/logtail
 # You would also be well advised to make sure all your system/cron scripts
 # use this directory for their "scratch" area. 
 
-TMPDIR=/usr/local/etc/tmp
+TMPDIR=/tmp
 
 # The 'grep' command. This command MUST support the
 # '-i' '-v' and '-f' flags!! The GNU grep does this by default (that's
@@ -89,7 +89,7 @@ MAIL=mail
 # look for generic ISS probes (who the hell else looks for 
 # "WIZ" besides ISS?), and obvious sendmail attacks/probes.
 
-HACKING_FILE=/usr/local/etc/logcheck.hacking
+HACKING_FILE=/etc/logcheck/hacking
 
 # File of security violation patterns to specifically look for.
 # This file should contain keywords of information administrators should
@@ -98,7 +98,7 @@ HACKING_FILE=/usr/local/etc/logcheck.hacking
 # some items, but these will be caught by the next check. Move suspicious
 # items into this file to have them reported regularly.
 
-VIOLATIONS_FILE=/usr/local/etc/logcheck.violations
+VIOLATIONS_FILE=/etc/logcheck/violations
 
 # File that contains more complete sentences that have keywords from
 # the violations file. These keywords are normal and are not cause for 
@@ -115,14 +115,14 @@ VIOLATIONS_FILE=/usr/local/etc/logcheck.violations
 #
 # Again, be careful what you put in here and DO NOT LEAVE IT EMPTY!
 
-VIOLATIONS_IGNORE_FILE=/usr/local/etc/logcheck.violations.ignore
+VIOLATIONS_IGNORE_FILE=/etc/logcheck/violations.ignore
 
 # This is the name of a file that contains patterns that we should
 # ignore if found in a log file. If you have repeated false alarms
 # or want specific errors ignored, you should put them in here.
 # Once again, be as specific as possible, and go easy on the wildcards
 
-IGNORE_FILE=/usr/local/etc/logcheck.ignore
+IGNORE_FILE=/etc/logcheck/ignore
 
 # The files are reported in the order of hacking, security 
 # violations, and unusual system events. Notice that this
@@ -167,8 +167,12 @@ fi
 
 # Linux Red Hat Version 3.x, 4.x
 $LOGTAIL /var/log/messages > $TMPDIR/check.$$
-$LOGTAIL /var/log/secure >> $TMPDIR/check.$$
+#$LOGTAIL /var/log/secure >> $TMPDIR/check.$$
 $LOGTAIL /var/log/maillog >> $TMPDIR/check.$$
+$LOGTAIL /var/log/error >> $TMPDIR/check.$$
+$LOGTAIL /var/log/critical >> $TMPDIR/check.$$
+$LOGTAIL /var/log/kerninfo >> $TMPDIR/check.$$
+$LOGTAIL /var/log/debug >> $TMPDIR/check.$$
 
 # FreeBSD 2.x
 #$LOGTAIL /var/log/messages > $TMPDIR/check.$$
